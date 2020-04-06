@@ -23,8 +23,8 @@ Terraform work loop: `terraform validate`, `terraform plan`, `terraform apply`
 **Required permissions.**  
 An iam user that runs terraform must have vpc and eks permissions.  
 
-effect: Allow, action: ec2:* , resrouce: *  
-effect: Allow, action: eks:* , resource: *  
+effect: Allow, action: ec2:\* , resrouce: *  
+effect: Allow, action: eks:\* , resource: *  
 
 **Variables (terraform.tfvars, variables.tf)**  
 You must set the values of the variables in the terraform.tfvars file.
