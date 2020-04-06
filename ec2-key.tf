@@ -1,0 +1,6 @@
+resource "aws_key_pair" "deployer" {
+  key_name   = var.eks_node_ssh_key
+
+  # ==> paste public key
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpqCeeRUKY0TpIL0K0JuQtfSqNv06KiCGuqpES4D85nYAAqX0H60WIJvR5vvOON5iuiHaeB2MEvSJ/bDdBtjailcmOJQPZS6wUKLeTm5/0I2CJIf7Me40e+yVaJTPmEjkTkpZwZnsNAoxzIfhWJFvfnBHKNFW4Ijs5r2jXDhxo4IlwykP9eU8ZuetmXYbkK92iTsuh7dslLZcyQMgZgWyu9RGxs98zoxba9XI7nB/88NsibrBPmybsNte55tVGHmTAqPhxklgDzYRWmtgFuKNahFdo9MVRM8mBNOyNtbE2UWRz6GCpn9Dhh3KmKXtHq79Uheo9FpWbrv0v2qB+yKZz"
+}
