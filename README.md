@@ -67,15 +67,16 @@ Vpc is configured to enable public access to the kubernetes api server.
 Private access to the kubernetes api server is disabled.  
 
 **Eks worker node key pair (ec2-key.tf).**  
-Terraform aws_key_pair resource requires existing public key.  
+Terraform aws_key_pair resource requires *existing* key pair.  
 
-create key pair with the *ssh-keygen*  
+Create key pair with the *ssh-keygen*  
 
-**import key-pair**  
+Import key pair  
 aws ec2 import-key-pair --key-name="apic" ...  
 
-update eks_node_ssh_key variable variables.tf with the key name.  
-paste public key into *ec2-key.tf*  
+Update eks_node_ssh_key variable in `variables.tf` with the key name.  
+
+Paste public key into *ec2-key.tf*  
 
 **Eks nodegroup (eks-nodegroup.tf).**  
 Nodegroup is autoscaling group. Worker nodes are deployed into auto-scaling group.  
@@ -95,7 +96,7 @@ You can define more restirive rules for ssh access to the worker nodes.
 
 **Container registry.**  
 Container registry is available in aws account.  
-To upload images into container registry follow aws documentation how to create access token, create repository and push container image into repository.  
+To upload images into container registry follow aws documentation how to create access token, create repositories and push container images into repositories.  
 
 Kubelet on the worker node is granted registry read-only managed permission by the node role. (see iam section) and can pull images from the registry.  
 
